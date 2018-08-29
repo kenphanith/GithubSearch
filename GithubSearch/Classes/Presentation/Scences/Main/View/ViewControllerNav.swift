@@ -1,17 +1,18 @@
 //
-//  ViewController.swift
+//  ViewControllerNav.swift
 //  GithubSearch
 //
-//  Created by ken.phanith on 2018/08/18.
+//  Created by ken.phanith on 2018/08/29.
 //  Copyright © 2018 Quad. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import RxSwift
 import RxCocoa
 import ReactorKit
 
-final class ViewController: UIViewController {
+final class ViewControllerNav: UIViewController {
     
     /// create subview instances
     private let subviews: ViewControllerSubview = ViewControllerSubview()
@@ -33,9 +34,8 @@ final class ViewController: UIViewController {
     
 }
 
-
 // MARK: - LIFECYCLE
-extension ViewController {
+extension ViewControllerNav {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +62,7 @@ extension ViewController {
 
 
 // MARK: - Reactor
-extension ViewController: StoryboardView {
+extension ViewControllerNav: StoryboardView {
     
     func bind(reactor: ViewControllerReactor) {
         
@@ -87,4 +87,3 @@ extension ViewController: StoryboardView {
     }
     
 }
-

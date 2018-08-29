@@ -24,7 +24,6 @@ struct APIClient {
     
     struct Fetch {
         static func get(query: String) -> Observable<APIClient.Fetch.ResponseFetchRepositoryDecode> {
-            print("get API Client")
             return Session.sendRequest(
                 request: Fetch.GetFetchRepositoryRequest(query: query)
             )

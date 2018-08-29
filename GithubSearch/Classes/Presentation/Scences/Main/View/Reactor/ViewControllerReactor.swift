@@ -15,23 +15,31 @@ final class ViewControllerReactor: Reactor {
     
     enum Action {
         case didQuery(String)
+        case didItemSelect(IndexPath)
     }
     
     enum Mutation {
-        case setQuery(String)
+        case setRepos([GithubRepositoryModel])
     }
     
     struct State {
         var query: String
+        var repos: [GithubRepositoryModel]
     }
     
     let initialState: ViewControllerReactor.State
     
     weak var presenter: ViewControllerPresenter?
     
-    init() {
+    private let router: ViewControllerRouter
+    private let viewController: ViewController
+    
+    init(router: ViewControllerRouter, viewController: ViewController) {
+        self.router = router
+        self.viewController = viewController
         self.initialState = State(
-            query: ""
+            query: "",
+            repos: []
         )
     }
 }
@@ -43,11 +51,25 @@ extension ViewControllerReactor {
         switch action {
             
         case .didQuery(let query):
-//            self.presenter?.fetchRepository(query: query)
-//                .catchError({ (error) -> Observable<[GithubRepositoryModel]> in Observable.just([]) })
-//                .flatMap { repoModel -> Observable<[GithubRepositoryModel]> in
-//                    Observable.just(Mutation.setQueryData(repoModel))
-            return Observable.just(Mutation.setQuery(query))
+            if let `presenter` = self.presenter {
+                return presenter.fetchRepository(query: query)
+                    .catchError({ (error) -> Observable<[GithubRepositoryModel]> in Observable.just([]) })
+                    .flatMap { repos -> Observable<[GithubRepositoryModel]> in
+                        if (repos.count == 0) {
+                            self.router.showErrorAlert(title: "Fetch Repo Error", message: "API Error")
+                        }
+                        return Observable.just(repos)
+                    }
+                    .flatMap { repos -> Observable<Mutation> in
+                        return Observable.just(Mutation.setRepos(repos))
+                }
+            } else {
+                return Observable.just(Mutation.setRepos([]))
+            }
+            
+        case .didItemSelect(let indexPath):
+            self.router.navigateToWebview(url: self.currentState.repos[indexPath.row].htmlUrl)
+            return Observable.empty()
             
         }
     }
@@ -56,8 +78,8 @@ extension ViewControllerReactor {
         var newState = state
         switch mutation {
             
-        case .setQuery(let query):
-            newState.query = query
+        case .setRepos(let repos):
+            newState.repos = repos
             
         }
         return newState

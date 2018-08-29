@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		9CF7742C7264B8479E9BEB7B /* Pods_GithubSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D7213DD3C1F1C70001D0B63 /* Pods_GithubSearch.framework */; };
+		B997C39C2136848E001D8C93 /* WebviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B997C39B2136848E001D8C93 /* WebviewController.swift */; };
+		B997C39E2136849F001D8C93 /* WebviewSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B997C39D2136849F001D8C93 /* WebviewSubview.swift */; };
+		B997C3A321368C90001D8C93 /* ViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B997C3A221368C90001D8C93 /* ViewControllerProtocol.swift */; };
+		B997C3AA21369FBE001D8C93 /* WebviewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B997C3A921369FBE001D8C93 /* WebviewRouter.swift */; };
+		B997C3AC21369FCF001D8C93 /* WebviewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B997C3AB21369FCF001D8C93 /* WebviewReactor.swift */; };
 		B99EE9CC212AD35F00AC7861 /* ViewControllerSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99EE9CB212AD35F00AC7861 /* ViewControllerSubview.swift */; };
 		B99EE9CF212AD38C00AC7861 /* ViewControllerReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99EE9CE212AD38C00AC7861 /* ViewControllerReactor.swift */; };
 		B99EE9D1212AD3A300AC7861 /* ViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99EE9D0212AD3A300AC7861 /* ViewControllerPresenter.swift */; };
@@ -32,6 +37,11 @@
 
 /* Begin PBXFileReference section */
 		5D7213DD3C1F1C70001D0B63 /* Pods_GithubSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GithubSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B997C39B2136848E001D8C93 /* WebviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebviewController.swift; sourceTree = "<group>"; };
+		B997C39D2136849F001D8C93 /* WebviewSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebviewSubview.swift; sourceTree = "<group>"; };
+		B997C3A221368C90001D8C93 /* ViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerProtocol.swift; sourceTree = "<group>"; };
+		B997C3A921369FBE001D8C93 /* WebviewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebviewRouter.swift; sourceTree = "<group>"; };
+		B997C3AB21369FCF001D8C93 /* WebviewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebviewReactor.swift; sourceTree = "<group>"; };
 		B99EE9CB212AD35F00AC7861 /* ViewControllerSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSubview.swift; sourceTree = "<group>"; };
 		B99EE9CE212AD38C00AC7861 /* ViewControllerReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerReactor.swift; sourceTree = "<group>"; };
 		B99EE9D0212AD3A300AC7861 /* ViewControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenter.swift; sourceTree = "<group>"; };
@@ -87,9 +97,61 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B997C3992136844F001D8C93 /* Webview */ = {
+			isa = PBXGroup;
+			children = (
+				B997C3A821369FB0001D8C93 /* Router */,
+				B997C39A2136847C001D8C93 /* View */,
+			);
+			path = Webview;
+			sourceTree = "<group>";
+		};
+		B997C39A2136847C001D8C93 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B997C3A721369F18001D8C93 /* Reactor */,
+				B997C3A621369F0B001D8C93 /* Subview */,
+				B997C39B2136848E001D8C93 /* WebviewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B997C3A121368C52001D8C93 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				B997C3A221368C90001D8C93 /* ViewControllerProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		B997C3A621369F0B001D8C93 /* Subview */ = {
+			isa = PBXGroup;
+			children = (
+				B997C39D2136849F001D8C93 /* WebviewSubview.swift */,
+			);
+			path = Subview;
+			sourceTree = "<group>";
+		};
+		B997C3A721369F18001D8C93 /* Reactor */ = {
+			isa = PBXGroup;
+			children = (
+				B997C3AB21369FCF001D8C93 /* WebviewReactor.swift */,
+			);
+			path = Reactor;
+			sourceTree = "<group>";
+		};
+		B997C3A821369FB0001D8C93 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				B997C3A921369FBE001D8C93 /* WebviewRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		B99EE9C2212AD2C100AC7861 /* Scences */ = {
 			isa = PBXGroup;
 			children = (
+				B997C3992136844F001D8C93 /* Webview */,
 				B99EE9C3212AD2C700AC7861 /* Main */,
 			);
 			path = Scences;
@@ -133,10 +195,10 @@
 		B99EE9C7212AD30900AC7861 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B997C3A121368C52001D8C93 /* Protocol */,
 				B99EE9CD212AD37700AC7861 /* Reactor */,
 				B99EE9CA212AD33E00AC7861 /* Subviews */,
 				B9DC59CE21286EBC00DB3223 /* ViewController.swift */,
-				B99EE9CB212AD35F00AC7861 /* ViewControllerSubview.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -144,6 +206,7 @@
 		B99EE9CA212AD33E00AC7861 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				B99EE9CB212AD35F00AC7861 /* ViewControllerSubview.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -454,17 +517,22 @@
 				B99EE9D1212AD3A300AC7861 /* ViewControllerPresenter.swift in Sources */,
 				B99EE9EA212BE9F200AC7861 /* FetchRepositoryAPIDataStore.swift in Sources */,
 				B99EE9CC212AD35F00AC7861 /* ViewControllerSubview.swift in Sources */,
+				B997C39E2136849F001D8C93 /* WebviewSubview.swift in Sources */,
 				B99EE9E4212BDA3900AC7861 /* GithubRepositoryTranslator.swift in Sources */,
 				B99EE9D3212AD3BD00AC7861 /* ViewControllerRouter.swift in Sources */,
+				B997C39C2136848E001D8C93 /* WebviewController.swift in Sources */,
 				B99EE9E8212BE99400AC7861 /* FetchGithubRepoService.swift in Sources */,
+				B997C3AC21369FCF001D8C93 /* WebviewReactor.swift in Sources */,
 				B99EE9D9212AD40B00AC7861 /* ViewControllerUsecase.swift in Sources */,
 				B9DC59CD21286EBC00DB3223 /* AppDelegate.swift in Sources */,
 				B99EE9E1212BD93000AC7861 /* GithubRepositoryModel.swift in Sources */,
 				B9DC59E82128731000DB3223 /* APIClient.swift in Sources */,
 				B9DC59EC212874C500DB3223 /* APIKit+extensions.swift in Sources */,
 				B9DC59EE21287F2900DB3223 /* RequestType.swift in Sources */,
+				B997C3AA21369FBE001D8C93 /* WebviewRouter.swift in Sources */,
 				B99EE9EC212BEA0500AC7861 /* FetchRepositoryAPIRepository.swift in Sources */,
 				B9DC59F221288CC600DB3223 /* FetchRepositoryRequest.swift in Sources */,
+				B997C3A321368C90001D8C93 /* ViewControllerProtocol.swift in Sources */,
 				B9DC59F0212880F700DB3223 /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
