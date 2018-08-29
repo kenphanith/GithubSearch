@@ -1,0 +1,61 @@
+PODS:
+  - APIKit (3.2.1):
+    - Result (~> 3.0)
+  - Argo (4.1.2):
+    - Runes (>= 4.0.0)
+  - Himotoki (3.2.0)
+  - ReactorKit (1.1.0):
+    - RxSwift (>= 4.0.0)
+  - Realm (3.7.4):
+    - Realm/Headers (= 3.7.4)
+  - Realm/Headers (3.7.4)
+  - RealmSwift (3.7.4):
+    - Realm (= 3.7.4)
+  - Result (3.2.4)
+  - Runes (4.1.0)
+  - RxCocoa (4.2.0):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.2.0)
+  - SnapKit (4.0.0)
+
+DEPENDENCIES:
+  - APIKit
+  - Argo
+  - Himotoki
+  - ReactorKit
+  - Realm
+  - RealmSwift
+  - RxCocoa
+  - RxSwift
+  - SnapKit
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - APIKit
+    - Argo
+    - Himotoki
+    - ReactorKit
+    - Realm
+    - RealmSwift
+    - Result
+    - Runes
+    - RxCocoa
+    - RxSwift
+    - SnapKit
+
+SPEC CHECKSUMS:
+  APIKit: a39ff72ac44efc15513fd1b98800f63c525be61b
+  Argo: 5db06502fc1222d83011f574243089dab25202ff
+  Himotoki: 2618fc6b939ad6d9b71c52c90fe210f54ea28167
+  ReactorKit: 26470a9eff5094fae909a30af0be7cd0cf8a182d
+  Realm: a469bb59e33f9926102ccaea4349822c53b9117e
+  RealmSwift: a45861b21c180f5cf0f122144b9759fa8dde3e9e
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  Runes: 72a67a5bbbe1b5fdae08b5a01b10c60d83fc69aa
+  RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
+  RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+
+PODFILE CHECKSUM: fa914e3bcc1d8920d4ec007e7a9c86318255a966
+
+COCOAPODS: 1.5.2
