@@ -21,5 +21,8 @@ target 'GithubSearch' do
   # Database
   pod "Realm"
   pod "RealmSwift"
+  
+  # Swift Initializer
+  pod "Then"
 
 end

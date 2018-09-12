@@ -9,41 +9,32 @@
 import Foundation
 import UIKit
 import SnapKit
+import Then
 
 final class ViewControllerSubview {
     
     typealias viewController = ViewController
     
-    
     /// gray header
-    lazy var header: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor.lightGray
-        return view
-    }()
+    let header = UIView().then {
+        $0.backgroundColor = UIColor.lightGray
+    }
     
     
     /// app label title
-    lazy var appTitle: UILabel = {
-        let label = UILabel()
-        label.text = "Github Search"
-        return label
-    }()
-    
+    let appTitle = UILabel().then {
+        $0.text = "Github Search"
+    }
     
     /// search bar
-    lazy var searchBar: UISearchBar = {
-        let searchBar = UISearchBar()
-        searchBar.placeholder = "Search for github repository..."
-        searchBar.layer.borderWidth = 0.5
-        searchBar.layer.borderColor = UIColor.gray.cgColor
-        return searchBar
-    }()
+    let searchBar = UISearchBar().then {
+        $0.placeholder = "Search for github repository..."
+        $0.layer.borderWidth = 0.5
+        $0.layer.borderColor = UIColor.gray.cgColor
+    }
     
-    lazy var searchResult: UITableView = {
-        let tableView = UITableView()
-        return tableView
-    }()
+    // search result tableview
+    let searchResult = UITableView()
     
     
     /// call this func to update subview constraints

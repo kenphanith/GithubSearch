@@ -9,29 +9,23 @@
 import Foundation
 import UIKit
 import SnapKit
+import Then
 
 final class WebviewSubview {
     
     /// webview UI Component
-    lazy var webview: UIWebView = {
-        let webview = UIWebView()
-        return webview
-    }()
+    let webview = UIWebView()
     
     /// header field UI Component
-    lazy var header: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor.lightGray
-        return view
-    }()
+    let header = UIView().then {
+        $0.backgroundColor = UIColor.lightGray
+    }
     
     /// dismiss button
-    lazy var dismissBtn: UIButton = {
-        let button = UIButton()
-        button.setTitle("Dismiss", for: .normal)
-        button.setTitleColor(UIColor.blue, for: .normal)
-        return button
-    }()
+    let dismissBtn = UIButton().then {
+        $0.setTitle("Dismiss", for: .normal)
+        $0.setTitleColor(UIColor.blue, for: .normal)
+    }
     
     /// Update All subview SnapKit Constraints
     ///
